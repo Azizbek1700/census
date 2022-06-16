@@ -8,6 +8,7 @@ import org.hibernate.annotations.Where;
 import uz.bakhodirov.census.entity.base.Auditable;
 import uz.bakhodirov.census.entity.employmentStatus.*;
 import uz.bakhodirov.census.entity.quarter.Quarter;
+import uz.bakhodirov.census.enums.FamilyStatus;
 import uz.bakhodirov.census.enums.Gender;
 import uz.bakhodirov.census.enums.Role;
 
@@ -20,23 +21,15 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Where(clause = "deleted is false")
-public class AuthUser extends Auditable  {
+public class Employee extends Auditable  {
 
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = false,unique = true)
-    private String username;
+
 
     @Column(nullable = false,unique = true)
     private String phoneNumber;
-
-    @Column(nullable = false)
-    private String password;
-
-    private String picturePath;
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
 
 
@@ -47,6 +40,11 @@ public class AuthUser extends Auditable  {
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
+
+    @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    private FamilyStatus familyStatus;
+
 
     // MFY
 

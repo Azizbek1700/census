@@ -1,11 +1,10 @@
-package uz.bakhodirov.census.dto.auth;
+package uz.bakhodirov.census.dto.employee;
 
 import lombok.*;
 import uz.bakhodirov.census.dto.base.BaseDto;
 import uz.bakhodirov.census.entity.employmentStatus.*;
 import uz.bakhodirov.census.entity.quarter.Quarter;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AuthCreateDto implements BaseDto {
+public class EmployeeCreateDto implements BaseDto {
 
     @NotBlank
     private String fullName;
@@ -41,6 +40,9 @@ public class AuthCreateDto implements BaseDto {
 
     @NotBlank
     private String gender;
+
+    @NotBlank
+    private String familyStatus;
 
     private Quarter quarter;
 

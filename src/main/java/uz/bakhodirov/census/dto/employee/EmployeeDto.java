@@ -1,20 +1,19 @@
-package uz.bakhodirov.census.dto.auth;
+package uz.bakhodirov.census.dto.employee;
 
-import lombok.*;
-import uz.bakhodirov.census.dto.base.BaseDto;
+import lombok.Getter;
+import lombok.Setter;
+import uz.bakhodirov.census.dto.base.GenericDto;
 import uz.bakhodirov.census.entity.employmentStatus.*;
 import uz.bakhodirov.census.entity.quarter.Quarter;
+import uz.bakhodirov.census.enums.Role;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
+
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class AuthCreateDto implements BaseDto {
+public class EmployeeDto extends GenericDto {
 
     @NotBlank
     private String fullName;
@@ -42,6 +41,9 @@ public class AuthCreateDto implements BaseDto {
     @NotBlank
     private String gender;
 
+    @NotBlank
+    private String familyStatus;
+
     private Quarter quarter;
 
     private EmploymentStatus employmentStatus;
@@ -53,10 +55,5 @@ public class AuthCreateDto implements BaseDto {
     private YouthNotebook youthNotebook;
 
     private List<SocialStatus> socialStatus;
-
-
-
-
-
 
 }
